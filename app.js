@@ -35,16 +35,19 @@ function loadData() {
             lastUpdate: new Date()
         };
 
-        console.log(datacovid);
-
-        await data.insert(datacovid).then(console.log('Inserting Data'));
+        await data.find({}, '-_id').then((docs) => {
+            console.log(docs[docs.length - 1].positif);
+            if(docs[docs.length - 1].positif !== positifNum){
+                data.insert(datacovid).then(console.log('Data added'));
+            }
+        });
     });
+
+    
 }
 
 loadData();
-setInterval(loadData, 1000*60*60*2);
-// setInterval(loadData, 1000*60*60*2);
-// loadData();
+setInterval(loadData, 1000*60*30);
 
 let port = process.env.PORT || 3000;
 
