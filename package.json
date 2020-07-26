@@ -1,0 +1,24 @@
+{
+  "name": "covid19-api-indonesia",
+  "version": "2.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Rey",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "monk": "^7.3.0",
+    "morgan": "^1.10.0",
+    "nedb": "^1.8.0",
+    "request": "^2.88.2",
+    "yup": "^0.29.1"
+  }
+}
