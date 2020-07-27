@@ -6,6 +6,16 @@ Menyajikan data covid-19 yang berasal dari website https://covid19.go.id. API in
 ---
 ## Endpoint:
 * /api/indonesia
+  - Contoh response:
+      ```json
+      {
+        "positif": 98778,
+        "sembuh": 56655,
+        "meninggal": 4781,
+        "lastUpdate": "2020-07-26T09:00:42.208Z"
+      }
+      ```
+  >Note : waktu yang digunakan adalah UTC
 ---
 ## License
 
