@@ -26,12 +26,12 @@ function loadData() {
         const meninggalID = await $('#case > div > div > div > div > div:nth-child(2) > div:nth-child(5)');
         const positifNum = Number(positifID.find('strong').text().split('.').join(''));
         const sembuhNum = Number(sembuhID.find('strong').text().split('.').join(''));
-        const meinggalNum = Number(meninggalID.find('strong').text().split('.').join(''));
+        const meninggalNum = Number(meninggalID.find('strong').text().split('.').join(''));
 
         let datacovid = {
             positif: positifNum,
             sembuh: sembuhNum,
-            meninggal: meinggalNum,
+            meninggal: meninggalNum,
             lastUpdate: new Date()
         };
 
