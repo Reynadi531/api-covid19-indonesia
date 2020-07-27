@@ -34,11 +34,13 @@ function loadData() {
             meninggal: meninggalNum,
             lastUpdate: new Date()
         };
-
+        
         await data.find({}, '-_id').then((docs) => {
             console.log(docs[docs.length - 1].positif);
             if(docs[docs.length - 1].positif !== positifNum || docs[docs.length - 1].sembuh !== sembuhNum || docs[docs.length - 1].meninggal !== meninggalNum){
-                data.insert(datacovid).then(console.log('Data added'));
+                if(meninggalNum !== 0 && sembuhNum !== 0 && meninggalNum !== 0){
+                    data.insert(datacovid).then(console.log('Data added'));
+                }
             }
         });
     });
