@@ -45,7 +45,7 @@ function loadData() {
 }
 
 loadData();
-setInterval(loadData, 1000*60*30);
+setInterval(loadData, 1000*60*5);
 
 let port = process.env.PORT || 3000;
 
