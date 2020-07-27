@@ -2,7 +2,7 @@
 
 Menyajikan data covid-19 yang berasal dari website https://covid19.go.id. API ini mengambil data dengan teknik web scarping lalu memasukan ke database MongoDB. Data diambil setiap 5 menit dan dicek dengan data di database. Apabila berbeda maka data akan ditambahkan ke database <br>
 
-><a href="https://apicovid19indonesia.herokuapp.com/">JSON API</a>
+><a href="https://apicovid19indonesia.vercel.app/">JSON API</a>
 ---
 ## Endpoint:
 * /api/indonesia
