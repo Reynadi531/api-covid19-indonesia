@@ -33,7 +33,7 @@ function loadData() {
                     console.log('Web erorr');
                 }
             }else{
-                console.log('Data not valid')
+                console.log('Data masih sama')
             }
         });
     });
