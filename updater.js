@@ -24,15 +24,16 @@ function loadData() {
             lastUpdate: new Date()
         };
         
-        await data.find({}, '-_id').then((docs) => {
-            console.log(docs[docs.length - 1]);
-            if(positifNum === 0 && sembuhNum === 0 && meninggalNum === 0) return;
-            if(docs[docs.length - 1].positif !== positifNum || docs[docs.length - 1].sembuh !== sembuhNum || docs[docs.length - 1].meninggal !== meninggalNum) {
-                data.insert(datacovid).then(console.log('Data added'));
-            }else{
-                console.log('Data masih sama')
-            }
-        });
+        if(positifNum !== 0 && sembuhNum !== 0 && meninggalNum !== 0) {
+            await data.find({}, '-_id').then((docs) => {
+                console.log(docs[docs.length - 1]);
+                if(docs[docs.length - 1].positif !== positifNum || docs[docs.length - 1].sembuh !== sembuhNum || docs[docs.length - 1].meninggal !== meninggalNum) {
+                    data.insert(datacovid).then(console.log('Data added'));
+                }else{
+                    console.log('Data masih sama')
+                }
+            });
+        }
     });
 }
 
