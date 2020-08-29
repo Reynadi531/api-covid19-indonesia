@@ -2,9 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const morgan = require('morgan');
-const request = require('request');
-const cheerio = require('cheerio');
-const yup = require('yup');
 const monk = require('monk');
 
 const app = express();
@@ -13,25 +10,34 @@ app.use(cors());
 app.use(helmet());
 app.use(morgan('dev'));
 
-require('dotenv').config();
+const middlewares = require('./middlewares');
 
-const db = monk(process.env.MONGO_URI);
-const data = db.get('data');
+require('dotenv').config();
 
 let port = process.env.PORT || 3000;
 
+const IndonesiaRoutes = require('./Routes/indonesia');
+
+app.use('/api', IndonesiaRoutes);
+
+app.get('/api', (req, res) => {
+    res.json({
+        Endpoints: [
+            `${req.hostname}/api/indonesia`
+        ]
+    })
+});
+
+app.use(middlewares.notFound);
+app.use(middlewares.errorHandler);
+
 app.get('/', (req, res) => {
     res.json({
-        "Messages": "API Covid-19 Indonesia",
-        "Endpoints": "/api/indonesia"
+        Messages: 'API Covid-19 Indonesia',
+        Endpoints: `${req.hostname}/api/indonesia`
     });
 });
 
-app.get('/api/indonesia', (req, res) => {
-    data.find({}, '-_id').then((docs) => {
-        res.json(docs[docs.length - 1]);
-    });
-})
 
 app.listen(port, () => {
     console.log(`Listening at ${port}`);

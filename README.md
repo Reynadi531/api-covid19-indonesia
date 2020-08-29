@@ -16,6 +16,12 @@ Menyajikan data covid-19 yang berasal dari website https://covid19.go.id. API in
         "lastUpdate": "2020-07-26T09:00:42.208Z"
       }
       ```
+    * Query yang bisa digunakan:
+      * view = all (untuk semua koleksi data) dan latest (untuk koleksi terbaru)
+        >contoh penggunaan:
+          >* https://apicovid19indonesia.vercel.app/api/indonesia?view=latest
+          >* https://apicovid19indonesia.vercel.app/api/indonesia?view=all
+
   >Note : waktu yang digunakan adalah UTC
 ---
 ## License
