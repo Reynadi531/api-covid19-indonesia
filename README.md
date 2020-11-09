@@ -1,3 +1,6 @@
+#### Project status:
+> __*Project ini telah diarsipkan dan di nonaktifkan karena kendala database. Silahkan beralih ke V2 [disini](https://github.com/Reynadi531/api-covid19-indonesia-v2)*__
+
 # API COVID-19 Indonesia
 
 Menyajikan data covid-19 yang berasal dari website https://covid19.go.id. API ini mengambil data dengan teknik web scarping lalu memasukan ke database MongoDB. Data diambil setiap 5 menit dan dicek dengan data di database. Apabila berbeda maka data akan ditambahkan ke database <br>
